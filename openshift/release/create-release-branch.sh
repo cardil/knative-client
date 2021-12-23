@@ -23,15 +23,7 @@ ROOT_DIR=$(dirname "$0")/../..
 source "$ROOT_DIR/openshift/release/common.sh"
 
 # Custom files
-custom_files=$(cat <<EOT | tr '\n' ' '
-openshift
-OWNERS_ALIASES
-OWNERS
-Makefile
-package_cliartifacts.sh
-openshift-serverless-clients.spec
-EOT
-)
+custom_files=$(tr '\n' ' ' "$(dirname "${BASH_SOURCE[0]}")/custom-files.list")
 
 # Fetch the latest tags and checkout a new branch from the wanted tag.
 git fetch upstream --tags
@@ -43,6 +35,6 @@ git checkout openshift/main $custom_files
 git add $custom_files
 git commit -m "Add openshift specific files."
 
-# Fetch and generate required resources to enable faas as a plugin.
+# Fetch and generate required resources to enable embedded plugins.
 # As a result two git commits are added. 
 update_faas_plugin

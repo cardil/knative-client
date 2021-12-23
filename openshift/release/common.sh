@@ -1,7 +1,7 @@
 #!/bin/bash
 # Collection of shared functions used to generate and prepare releases.
 
-ROOT_DIR=$(dirname $0)/../..
+ROOT_DIR="$(dirname "${BASH_SOURCE[0]:-$0}")/../.."
 
 readonly FAAS_VERSION=${FAAS_VERSION:-"main"}
 readonly FAAS_REPO=${FAAS_REPO:-"github.com/boson-project/faas"}
@@ -55,7 +55,7 @@ mod_update() {
   go mod vendor
 
   # Cleanup
-  find "./vendor" \( -name "OWNERS" -o -name "*_test.go" \) -print0 | xargs -0 rm -f
+  find "./vendor" \( -name "OWNERS" -o -name "*_test.go" \) -delete -print
 }
 
 # Creates new git commits with all the necessary files

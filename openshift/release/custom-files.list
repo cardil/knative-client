@@ -1,0 +1,7 @@
+openshift
+OWNERS_ALIASES
+OWNERS
+Makefile
+package_cliartifacts.sh
+openshift-serverless-clients.spec
+hack/build.sh.d/kn-plugin-event.sh

@@ -21,15 +21,7 @@ set -e
 REPO_NAME=$(basename $(git rev-parse --show-toplevel))
 
 # Custom files
-custom_files=$(cat <<EOT | tr '\n' ' '
-openshift
-OWNERS_ALIASES
-OWNERS
-Makefile
-package_cliartifacts.sh
-openshift-serverless-clients.spec
-EOT
-)
+custom_files=$(tr '\n' ' ' "$(dirname "${BASH_SOURCE[0]}")/custom-files.list")
 
 # Reset release-next to upstream/main.
 git fetch upstream main
