@@ -1417,7 +1417,7 @@ knative.dev/eventing-kafka/pkg/common/constants
 # knative.dev/hack v0.0.0-20220216040439-0456e8bf6547
 ## explicit
 knative.dev/hack
-# knative.dev/kn-plugin-event v0.27.1 => github.com/openshift-knative/kn-plugin-event v0.27.1-0.20220223114256-af13ecf492aa
+# knative.dev/kn-plugin-event v1.0.1 => github.com/openshift-knative/kn-plugin-event v0.27.1-0.20220223114256-af13ecf492aa
 ## explicit
 knative.dev/kn-plugin-event/internal/cli/cmd
 knative.dev/kn-plugin-event/pkg/cli
