@@ -6,9 +6,9 @@ require (
 	github.com/google/go-cmp v0.5.6
 	github.com/maximilien/kn-source-pkg v0.6.3
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.3.0
 	github.com/spf13/pflag v1.0.5
-	github.com/spf13/viper v1.9.0
+	github.com/spf13/viper v1.10.0
 	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b
 	gotest.tools/v3 v3.0.3
 	k8s.io/api v0.22.5
@@ -34,6 +34,6 @@ replace (
 	k8s.io/apimachinery => k8s.io/apimachinery v0.21.4
 	k8s.io/client-go => k8s.io/client-go v0.21.4
 	k8s.io/code-generator => k8s.io/code-generator v0.21.4
-	knative.dev/kn-plugin-event => github.com/openshift-knative/kn-plugin-event v0.27.1-0.20220223114256-af13ecf492aa
+	knative.dev/kn-plugin-event => github.com/openshift-knative/kn-plugin-event v0.27.1-0.20220303144833-75d186babb2a
 	knative.dev/kn-plugin-func => github.com/openshift-knative/kn-plugin-func v0.22.1-0.20220223003546-b1c8c38b7608
 )
