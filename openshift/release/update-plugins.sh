@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# A standalone script to update embedded plugin dependecies
-# It can be combined with environment variables to overide default values:
+# A standalone script to update embedded plugin dependencies
+# It can be combined with environment variables to override default values:
 #
 # - FAAS_VERSION - specify a version for FaaS plugin 
 # - EVENT_VERSION - specify a version for event plugin

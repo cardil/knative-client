@@ -3,8 +3,8 @@
 
 ROOT_DIR="$(dirname "${BASH_SOURCE[0]:-$0}")/../.."
 
-readonly FAAS_VERSION=${FAAS_VERSION:-"main"}
-readonly FAAS_REPO=${FAAS_REPO:-"github.com/boson-project/faas"}
+readonly FAAS_VERSION=${FAAS_VERSION:-'main'}
+readonly FAAS_REPO=${FAAS_REPO:-'github.com/knative-sandbox/kn-plugin-func'}
 
 # The vendor/ dir is omitted to be added separately
 UPDATED_FILES=$(cat <<EOT | tr '\n' ' '
@@ -19,14 +19,16 @@ generate_file() {
   echo ":: Generating plugin_register.go file ::"
   local faas_repo=$1
 
-  cp ${ROOT_DIR}/openshift/release/plugin_register.go ${ROOT_DIR}/pkg/kn/root/plugin_register.go
+  cp "${ROOT_DIR}/openshift/release/plugin_register.go" \
+    "${ROOT_DIR}/pkg/kn/root/plugin_register.go"
 
   # Add new import after placeholder comment containing #plugin#.
   # The `sed` append can be repeated for additional plugins.
-  sed -i "/#plugins#/a _ \"${faas_repo}/plugin\"" ${ROOT_DIR}/pkg/kn/root/plugin_register.go
+  sed -i "/#plugins#/a _ \"${faas_repo}/plugin\"" \
+    "${ROOT_DIR}/pkg/kn/root/plugin_register.go"
 
   # Format the file accordingly
-  gofmt -w -s ${ROOT_DIR}/pkg/kn/root/plugin_register.go
+  gofmt -w -s "${ROOT_DIR}/pkg/kn/root/plugin_register.go"
 }
 
 # Generates replacements needed for faas.
